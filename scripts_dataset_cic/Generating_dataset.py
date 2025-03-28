@@ -1,4 +1,4 @@
-from Feature_extraction import Feature_extraction
+from scripts_dataset_cic.Feature_extraction import Feature_extraction
 import time
 import warnings
 warnings.filterwarnings('ignore')
@@ -8,17 +8,15 @@ from multiprocessing import Process
 import numpy as np
 import pandas as pd
 
-if __name__ == '__main__':
+def main(pcapfiles=[], n_threads=8):
 
     start = time.time()
     print("========== CIC IoT feature extraction ==========")
     
-    pcapfiles = [] #Place your pcap files here.
     subfiles_size = 10 # MB
-    split_directory = 'split_temp/'
-    destination_directory = 'output/'
+    split_directory = 'scripts_dataset_cic/split_temp/'
+    destination_directory = 'scripts_dataset_cic/output/'
     converted_csv_files_directory = 'csv_files/'
-    n_threads = 8
     
     address = "./"
     
@@ -77,6 +75,6 @@ if __name__ == '__main__':
         
     end = time.time()
     print(f'Elapsed Time = {(end-start)}s')
-    
-    
-    
+
+if __name__ == '__main__':
+	main()

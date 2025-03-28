@@ -1,7 +1,15 @@
+import time
+import psutil
+from resource import *
+
 import dpkt
 import pandas as pd
 import json
 from scapy.all import *
+
+import sys
+sys.path.append('scripts_dataset_cic')
+
 from Communication_features import Communication_wifi, Communication_zigbee
 from Connectivity_features import Connectivity_features_basic, Connectivity_features_time, \
     Connectivity_features_flags_bytes
@@ -25,6 +33,10 @@ class Feature_extraction():
     
     
     def pcap_evaluation(self,pcap_file,csv_file_name):
+        start_time = time.time()
+        p = psutil.Process()
+        p.cpu_percent(interval=None)
+
         global ethsize, src_ports, dst_ports, src_ips, dst_ips, ips , tcpflows, udpflows, src_packet_count, dst_packet_count, src_ip_byte, dst_ip_byte
         global protcols_count, tcp_flow_flgs, incoming_packets_src, incoming_packets_dst, packets_per_protocol, average_per_proto_src
         global average_per_proto_dst, average_per_proto_src_port, average_per_proto_dst_port
@@ -518,5 +530,10 @@ class Feature_extraction():
         processed_df = pd.concat(df_summary_list).reset_index(drop=True)
         processed_df = processed_df.drop(columns = 'ts')
         processed_df.to_csv(csv_file_name+".csv", index=False)
+
+        print("\n\nProcess use of CPU: ", p.cpu_percent(interval=None), "%", sep='')
+        print("Time elapsed: ", time.time() - start_time, "s", sep='')
+        print("Memory peak: ", getrusage(RUSAGE_SELF).ru_maxrss, "KB\n", sep='')
+
         return True
 
