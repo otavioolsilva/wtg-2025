@@ -1,12 +1,14 @@
-Conjunto de scripts utilizados para performar experimentos gerando arquivos CSV a partir de tráfego de rede. Utilizam-se scripts do material suplementar do dataset [CIC-IoT-2023](https://www.unb.ca/cic/datasets/iotdataset-2023.html) para processar os pacotes e gerar o CSV final[^1]. Os cenários considerados para experimentação são:
+Conjunto de scripts utilizados para performar experimentos gerando arquivos CSV a partir de tráfego de rede. Utilizam-se scripts do material suplementar do dataset [CIC-IoT-2023](https://www.unb.ca/cic/datasets/iotdataset-2023.html)[^1] para processar os pacotes e gerar o CSV final[^2]. Os cenários considerados para experimentação são:
 
-[^1]: Os scripts foram adaptados para o contexto de uso desse trabalho, em geral apenas adequações para que fossem invocados externamente e retornassem métricas de desempenho. As diferenças entre a versão original e a atual podem ser observadas pelo histórico de commits do repositório.
+[^1]: Neto, E. C. P., Dadkhah, S., Ferreira, R., Zohourian, A., Lu, R., and Ghorbani, A. A. (2023). CICIoT2023: A Real-Time Dataset and Benchmark for Large-Scale Attacks in IoT Environment. Sensors, 23(13).
 
-- Farejamento da rede, armazenamento do tráfego em arquivo PCAP e conversão para CSV[^2];
+[^2]: Os scripts foram adaptados para o contexto de uso desse trabalho, em geral apenas adequações para que fossem invocados externamente e retornassem métricas de desempenho. As diferenças entre a versão original e a atual podem ser observadas pelo histórico de commits do repositório.
+
+- Farejamento da rede, armazenamento do tráfego em arquivo PCAP e conversão para CSV[^3];
 - Farejamento da rede e conversão direta do tráfego para CSV, provendo os pacotes de 10 em 10 para a thread responsável pelas entradas do arquivo final;
 - Farejameto da rede e conversão direta do tráfego para CSV, provendo todos os pacotes em único conjunto para a thread responsável pelas entradas do arquivo final.
 
-[^2]: Nesse caso, os scripts do dataset CIC-IoT-2023 são utilizados inclusive para carregar os arquivos PCAP. O processamento é paralelizado usando múltiplos processos, cada qual sendo responsável por reportar suas próprias métricas de desempenho. Assim, para uma avaliação completa, é necessário tomar os valores obtidos proporcionalmente ao tempo de execução total do código na consideração final.
+[^3]: Nesse caso, os scripts do dataset CIC-IoT-2023 são utilizados inclusive para carregar os arquivos PCAP. O processamento é paralelizado usando múltiplos processos, cada qual sendo responsável por reportar suas próprias métricas de desempenho. Assim, para uma avaliação completa, é necessário tomar os valores obtidos proporcionalmente ao tempo de execução total do código na consideração final.
 
 As métricas consideradas para análise são: uso de CPU, pico de uso de memória, leitura e escrita em disco, número de pacotes processados (número de linhas do CSV final) e tempo total de execução.
 
