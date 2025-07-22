@@ -12,7 +12,7 @@ Conjunto de scripts utilizados para performar experimentos gerando arquivos CSV 
 
 As métricas consideradas para análise são: uso de CPU, pico de uso de memória, leitura e escrita em disco, número de pacotes processados (número de linhas do CSV final) e tempo total de execução.
 
-Base de códigos utilizada no artigo "Adequação Online de Rastros de Tráfego de Rede nos Clientes para Alimentar Sistemas de Detecção de Intrusão", submetido para o VIII Workshop de Trabalhos de Iniciação Científica e de Graduação ([WTG 2025](https://sbrc.sbc.org.br/2025/pt_br/viii-workshop-de-trabalhos-de-iniciacao-cientifica-e-de-graduacao-wtg-2025/)), parte do 43º Simpósio Brasileiro de Redes de Computadores e Sistemas Distribuídos ([SBRC 2025](https://sbrc.sbc.org.br/2025/pt_br/)).
+Base de códigos utilizada no artigo "Adequação Online de Rastros de Tráfego de Rede nos Clientes para Alimentar Sistemas de Detecção de Intrusão", submetido para o VIII Workshop de Trabalhos de Iniciação Científica e de Graduação ([WTG 2025](https://sbrc.sbc.org.br/2025/pt_br/viii-workshop-de-trabalhos-de-iniciacao-cientifica-e-de-graduacao-wtg-2025/)), parte do 43º Simpósio Brasileiro de Redes de Computadores e Sistemas Distribuídos ([SBRC 2025](https://sbrc.sbc.org.br/2025/pt_br/)), disponível nos [Anais Estendidos do simpósio na SBC Open Library](https://sol.sbc.org.br/index.php/sbrc_estendido/article/view/35888).
 
 ### Dependências
 
