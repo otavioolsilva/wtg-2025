@@ -30,3 +30,8 @@ Para gerar a simulação de tráfego de rede, a aplicação usada foi a [iperf3]
 Para rodar todos os cenários, utilize o Bash script `run-tests.sh` passando como argumentos o caminho do interpretador Python e o endereço IP do servidor iperf3. Por padrão, serão executados 5 vezes cada um dos cenários com taxas de bits de 5Mbits/s, 10Mbits/s, 15Mbits/s, 20Mbits/s e 25Mbits/s.
 
 Os scripts Python estão configurados para farejar a interface de rede "eth0" por 30 segundos por padrão, esses parâmetros podem ser alterados no código ou na invocação dos scripts. Note que os códigos que fazem uso das bibliotecas Pypcap e Scapy precisam ser executados com privilégios, enquanto o que utiliza o Pyshark apenas requer que o usuário esteja no grupo "wireshark".
+
+### Agradecimentos
+
+Esta pesquisa é parte do projeto "STARLING: Segurança e Alocação de Recursos em B5G via Técnicas de Inteligência Artificial", financiado pela Fundação de Amparo à Pesquisa do Estado de São Paulo (FAPESP, proc. [21/06995-0](https://bv.fapesp.br/pt/auxilios/113042/starling-seguranca-e-alocacao-de-recursos-em-b5g-via-tecnicas-de-inteligencia-artificial/)). O desenvolvimento foi realizado também com financiamento do processo FAPESP [2024/10240-3](https://bv.fapesp.br/pt/bolsas/219309/deteccao-de-ddos-na-internet-das-coisas-utilizando-metodos-de-aprendizado-de-maquina-com-retreinamen/).
+
